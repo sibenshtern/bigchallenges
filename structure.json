@@ -1,0 +1,52 @@
+{
+  "product": {
+    "id": "int",
+    "product_title": "string",
+    "weight": "float",
+    "purchase_price": "float",
+    "extra_charge": "int",
+    "margin": "int",
+    "selling_price": "purchase_price * (100% + extra_charge)",
+    "purchase_date": "date",
+    "sell_by_day": ["date", "end_day > purchase_day"]
+  },
+
+  "purchase": {
+    "id": "int",
+    "customer_card": "int",
+    "date_of_purchase": "date",
+    "products": [
+      {
+        "id": "int",
+        "weight": "float",
+        "total_price": "float"
+      }
+    ],
+    "action": "bool",
+    "action_count": "float",
+    "total_price": "float"
+  },
+
+  "purchase_without_action": {
+    "id": "int",
+    "customer_card": "int",
+    "date_of_purchase": "date",
+    "products": [
+      {
+        "id": "int",
+        "weight": "float",
+        "total_price": "float"
+      }
+    ],
+    "total_price": "float"
+  },
+
+  "customer": {
+    "id": "int",
+    "card_number": "int",
+    "gender": "string",
+    "birthday": "date"
+  },
+
+  "done": ["product", "customer"]
+}
