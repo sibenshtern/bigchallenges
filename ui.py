@@ -1,4 +1,5 @@
 import sys
+from copy import deepcopy
 
 from PyQt5.QtWidgets import QWidget, QApplication
 from PyQt5.QtWidgets import QHBoxLayout, QVBoxLayout
@@ -79,7 +80,8 @@ class Widget(QWidget):
         self.setLayout(main_layout)
 
     def load_table(self):
-        data = self.full_date
+        data = deepcopy(self.full_date[:1001])
+        
         titles = [
             'Номер карты покупателя', 'Дата покупки',
             'Продукты', 'Итоговая цена'
